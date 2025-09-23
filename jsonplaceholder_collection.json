@@ -1,0 +1,1246 @@
+{
+	"info": {
+		"_postman_id": "c0508b31-dbbf-4a2f-8f5f-a57b5bc72399",
+		"name": "My Collection",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48558117",
+		"_collection_link": "https://gauravkumar07082001-4772546.postman.co/workspace/Gaurav-Kumar's-Workspace~26d920a5-2a52-4e12-8ed2-157f41e308b9/collection/48558117-c0508b31-dbbf-4a2f-8f5f-a57b5bc72399?action=share&source=collection_link&creator=48558117"
+	},
+	"item": [
+		{
+			"name": "Custom LocalHost 19-sept_Assignment",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n        \"name\": \"Amit Kumar\",\r\n        \"email\": \"amit@test.com\",\r\n        \"age\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// pm.test(\"Response time is between 75 ms and 110 ms\",function(){\r",
+									"//     pm.expect(pm.response.responseTime).to.be.above(75);\r",
+									"//     pm.expect(pm.response.responseTime).to.be.below(110);\r",
+									"// });\r",
+									"\r",
+									"pm.test(\"Response body contains 'Bret' \",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// pm.test(\"Response has user name\", function () {\r",
+									"//     var jsonData = pm.response.json();\r",
+									"//     pm.expect(jsonData.name).to.eql(\"John Doe\");\r",
+									"    \r",
+									"// });\r",
+									"\r",
+									"// Test for successful 200 OK response\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									" pm.response.to.have.status(200);\r",
+									"});\r",
+									"// Test for specific status code\r",
+									"pm.test(\"Status code is 201 Created\", function () {\r",
+									" pm.response.to.have.status(201);\r",
+									"});\r",
+									"// Test for status code range\r",
+									"pm.test(\"Successful response\", function () {\r",
+									" pm.expect(pm.response.code).to.be.oneOf([200, 201, 202, 204]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"name\": \"Gaurav Kumar\",\r\n        \"email\": \"guru@test.com\",\r\n        \"age\": 22\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " { \r\n   \r\n        \"name\": \"Neha Sharma\",\r\n        \"email\": \"neha@test.com\",\r\n        \"age\": 25\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getbyId",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD Operation",
+			"item": [
+				{
+					"name": "Get Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ca61aee49e8fc7de2d15.free.beeceptor.com/api/users",
+							"protocol": "https",
+							"host": [
+								"ca61aee49e8fc7de2d15",
+								"free",
+								"beeceptor",
+								"com"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 5,\r\n    \"id\": 14,\r\n    \"title\": \"This is my Fourth post for the postman\",\r\n    \"completed\": true\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ca61aee49e8fc7de2d15.free.beeceptor.com/api/users/",
+							"protocol": "https",
+							"host": [
+								"ca61aee49e8fc7de2d15",
+								"free",
+								"beeceptor",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 1,\r\n  \"id\": 10,\r\n  \"title\": \"This is my Updatedd description first post for the postman\",\r\n  \"completed\": true\r\n}\r\n  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cabffb3e87ed5b88c8f7.free.beeceptor.com/api/user",
+							"protocol": "https",
+							"host": [
+								"cabffb3e87ed5b88c8f7",
+								"free",
+								"beeceptor",
+								"com"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assignment",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Class Assignment 19 Sept",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Post Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"userId\": 1,\r\n        \"id\": 201,\r\n        \"title\": \"this is updated \",\r\n        \"completed\": false\r\n\r\n\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/todos",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"userId\": 1,\r\n        \"id\": 5,\r\n        \"title\": \"Welcome to Postman\",\r\n        \"completed\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/todos",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/todos/5",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"todos",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Post Response",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Pre-request Script with Dynamic userId",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Set base URL and endpoint\r",
+									"\r",
+									"pm.environment.set(\"baseUrl\", \"https://jsonplaceholder.typicode.com\");\r",
+									"\r",
+									"pm.environment.set(\"albumsEndpoint\", \"/albums\");\r",
+									"\r",
+									"\r",
+									"// Generate a random userId between 1 and 10 (JSONPlaceholder supports userIds 1–10)\r",
+									"\r",
+									"let userId = Math.floor(Math.random() * 10) + 1;\r",
+									"\r",
+									"pm.environment.set(\"userId\", userId);\r",
+									"\r",
+									"\r",
+									"// Construct full URL with query parameter\r",
+									"\r",
+									"let fullUrl = pm.environment.get(\"baseUrl\") + pm.environment.get(\"albumsEndpoint\") + \"?userId=\" + userId;\r",
+									"\r",
+									"pm.environment.set(\"fullAlbumsUrl\", fullUrl);\r",
+									"\r",
+									"\r",
+									"// Log for visibility\r",
+									"\r",
+									"console.log(\"Fetching albums for userId:\", userId);\r",
+									"\r",
+									"console.log(\"Full URL:\", fullUrl);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fullAlbumsUrl}",
+							"host": [
+								"{{fullAlbumsUrl}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pre-request Scrip",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Set base URL and endpoint\r",
+									"\r",
+									"pm.environment.set(\"baseUrl\", \"https://jsonplaceholder.typicode.com\");\r",
+									"\r",
+									"pm.environment.set(\"albumsEndpoint\", \"/albums\");\r",
+									"\r",
+									"\r",
+									"// Construct full URL\r",
+									"\r",
+									"let fullUrl = pm.environment.get(\"baseUrl\") + pm.environment.get(\"albumsEndpoint\");\r",
+									"\r",
+									"pm.environment.set(\"fullAlbumsUrl\", fullUrl);\r",
+									"\r",
+									"\r",
+									"// Optional: Log to console for debugging\r",
+									"\r",
+									"console.log(\"Requesting albums from:\", fullUrl);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Pre-request Script for POST",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Request Test script",
+			"item": [
+				{
+					"name": "pre_request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"baseUrl\", \"https://jsonplaceholder.typicode.com\");\r",
+									"\r",
+									"pm.environment.set(\"albumsEndpoint\", \"/albums\");\r",
+									"\r",
+									"\r",
+									"// Set test data\r",
+									"\r",
+									"pm.environment.set(\"userId\", 1); // You can randomize this if needed\r",
+									"\r",
+									"pm.environment.set(\"albumTitle\", \"Test Album \" + Date.now()); // Unique title using timestamp\r",
+									"\r",
+									"\r",
+									"// Construct full URL\r",
+									"\r",
+									"let fullUrl = pm.environment.get(\"baseUrl\") + pm.environment.get(\"albumsEndpoint\");\r",
+									"\r",
+									"pm.environment.set(\"fullAlbumsUrl\", fullUrl);\r",
+									"\r",
+									"\r",
+									"// Log for debugging\r",
+									"\r",
+									"console.log(\"POST to:\", fullUrl);\r",
+									"\r",
+									"console.log(\"Test Data - userId:\", pm.environment.get(\"userId\"));\r",
+									"\r",
+									"console.log(\"Test Data - title:\", pm.environment.get(\"albumTitle\"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fullAlbumsUrl}}",
+							"host": [
+								"{{fullAlbumsUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put_request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Set base URL and endpoint\r",
+									"\r",
+									"pm.environment.set(\"baseUrl\", \"https://jsonplaceholder.typicode.com\");\r",
+									"\r",
+									"pm.environment.set(\"albumsEndpoint\", \"/albums\");\r",
+									"\r",
+									"\r",
+									"// Choose an album ID to update (JSONPlaceholder supports IDs 1–100)\r",
+									"\r",
+									"pm.environment.set(\"albumId\", 1); // You can randomize this if needed\r",
+									"\r",
+									"\r",
+									"// Set updated test data\r",
+									"\r",
+									"pm.environment.set(\"updatedTitle\", \"Updated Album \" + Date.now());\r",
+									"\r",
+									"pm.environment.set(\"updatedUserId\", 2); // Simulating a change in userId\r",
+									"\r",
+									"\r",
+									"// Construct full URL for PUT\r",
+									"\r",
+									"let fullUrl = pm.environment.get(\"baseUrl\") + pm.environment.get(\"albumsEndpoint\") + \"/\" + pm.environment.get(\"albumId\");\r",
+									"\r",
+									"pm.environment.set(\"fullPutUrl\", fullUrl);\r",
+									"\r",
+									"\r",
+									"// Log for debugging\r",
+									"\r",
+									"console.log(\"PUT to:\", fullUrl);\r",
+									"\r",
+									"console.log(\"Updated Title:\", pm.environment.get(\"updatedTitle\"));\r",
+									"\r",
+									"console.log(\"Updated UserId:\", pm.environment.get(\"updatedUserId\"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"baseUrl\", \"https://jsonplaceholder.typicode.com\");\r",
+									"\r",
+									"pm.environment.set(\"albumsEndpoint\", \"/albums\");\r",
+									"\r",
+									"\r",
+									"// Choose an album ID to update (JSONPlaceholder supports IDs 1–100)\r",
+									"\r",
+									"pm.environment.set(\"albumId\", 1); // You can randomize this if needed\r",
+									"\r",
+									"\r",
+									"// Set updated test data\r",
+									"\r",
+									"pm.environment.set(\"updatedTitle\", \"Updated Album \" + Date.now());\r",
+									"\r",
+									"pm.environment.set(\"updatedUserId\", 2); // Simulating a change in userId\r",
+									"\r",
+									"\r",
+									"// Construct full URL for PUT\r",
+									"\r",
+									"let fullUrl = pm.environment.get(\"baseUrl\") + pm.environment.get(\"albumsEndpoint\") + \"/\" + pm.environment.get(\"albumId\");\r",
+									"\r",
+									"pm.environment.set(\"fullPutUrl\", fullUrl);\r",
+									"\r",
+									"\r",
+									"// Log for debugging\r",
+									"\r",
+									"console.log(\"PUT to:\", fullUrl);\r",
+									"\r",
+									"console.log(\"Updated Title:\", pm.environment.get(\"updatedTitle\"));\r",
+									"\r",
+									"console.log(\"Updated UserId:\", pm.environment.get(\"updatedUserId\"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{fullPutUrl}}",
+							"host": [
+								"{{fullPutUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"baseUrl\", \"https://jsonplaceholder.typicode.com\");\r",
+									"\r",
+									"pm.environment.set(\"albumsEndpoint\", \"/albums\");\r",
+									"\r",
+									"\r",
+									"// Choose an album ID to delete (JSONPlaceholder supports IDs 1–100)\r",
+									"\r",
+									"pm.environment.set(\"albumIdToDelete\", 1); // You can change or randomize this\r",
+									"\r",
+									"\r",
+									"// Construct full URL for DELETE\r",
+									"\r",
+									"let fullUrl = pm.environment.get(\"baseUrl\") + pm.environment.get(\"albumsEndpoint\") + \"/\" + pm.environment.get(\"albumIdToDelete\");\r",
+									"\r",
+									"pm.environment.set(\"fullDeleteUrl\", fullUrl);\r",
+									"\r",
+									"\r",
+									"// Log for debugging\r",
+									"\r",
+									"console.log(\"DELETE request to:\", fullUrl);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{fullDeleteUrl}}",
+							"host": [
+								"{{fullDeleteUrl}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Newman for CLI Testing in Postman",
+			"item": [
+				{
+					"name": "GetAll",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"\r",
+									"pm.response.to.have.status(200);\r",
+									"\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has posts array\", function () {\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.expect(jsonData).to.be.an('array');\r",
+									"\r",
+									"pm.expect(jsonData.length).to.be.above(0);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_Specific_Post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"\r",
+									"pm.response.to.have.status(200);\r",
+									"\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Post has correct structure\", function () {\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.expect(jsonData).to.have.property('id');\r",
+									"\r",
+									"pm.expect(jsonData).to.have.property('title');\r",
+									"\r",
+									"pm.expect(jsonData).to.have.property('body');\r",
+									"\r",
+									"pm.expect(jsonData).to.have.property('userId');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Create New Pos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"\r",
+									"pm.response.to.have.status(201);\r",
+									"\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response contains created post\", function () {\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.expect(jsonData).to.have.property('id');\r",
+									"\r",
+									"pm.expect(jsonData.title).to.eql(\"Test Post\");\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"title\": \"Test Post\",\r\n\r\n\"body\": \"This is a test post\",\r\n\r\n\"userId\": 1\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Post data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": ""
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "API Testing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos/14",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 10,\r\n  \"id\":2,\r\n  \"title\": \"This is my first put data\",\r\n  \"completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostNew Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"id\":1,\r\n  \"title\": \"This is my first api post request\",\r\n  \"completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cabffb3e87ed5b88c8f7.free.beeceptor.com/api/users/1",
+					"protocol": "https",
+					"host": [
+						"cabffb3e87ed5b88c8f7",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "basic status code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test for successful 200 OK response\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							" pm.response.to.have.status(200);\r",
+							"});\r",
+							"// Test for specific status code\r",
+							"pm.test(\"Status code is 201 Created\", function () {\r",
+							" pm.response.to.have.status(201);\r",
+							"});\r",
+							"// Test for status code range\r",
+							"pm.test(\"Successful response\", function () {\r",
+							" pm.expect(pm.response.code).to.be.oneOf([200, 201, 202, 204]);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Response Time Validation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Status code tests\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time under 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"\r",
+							"// Header validation\r",
+							"pm.test(\"Content-Type is application/json\", function () {\r",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+							"});\r",
+							"\r",
+							"// JSON structure validation\r",
+							"pm.test(\"User response structure validation\", function () {\r",
+							"    const user = pm.response.json();\r",
+							"\r",
+							"    pm.expect(user).to.be.an('object');\r",
+							"    pm.expect(user).to.have.property('id');\r",
+							"    pm.expect(user).to.have.property('name');\r",
+							"    pm.expect(user).to.have.property('username');\r",
+							"    pm.expect(user).to.have.property('email');\r",
+							"    pm.expect(user).to.have.property('address');\r",
+							"    pm.expect(user).to.have.property('phone');\r",
+							"    pm.expect(user).to.have.property('website');\r",
+							"    pm.expect(user).to.have.property('company');\r",
+							"\r",
+							"    // Validate data types\r",
+							"    pm.expect(user.id).to.be.a('number');\r",
+							"    pm.expect(user.name).to.be.a('string');\r",
+							"    pm.expect(user.username).to.be.a('string');\r",
+							"    pm.expect(user.email).to.be.a('string');\r",
+							"    pm.expect(user.address).to.be.an('object');\r",
+							"    pm.expect(user.phone).to.be.a('string');\r",
+							"    pm.expect(user.website).to.be.a('string');\r",
+							"    pm.expect(user.company).to.be.an('object');\r",
+							"});\r",
+							"\r",
+							"// Data value validation\r",
+							"pm.test(\"Email format is valid\", function () {\r",
+							"    const user = pm.response.json();\r",
+							"    pm.expect(user.email).to.match(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Website format is valid (domain check)\", function () {\r",
+							"    const user = pm.response.json();\r",
+							"    pm.expect(user.website).to.match(/^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\\.[a-zA-Z]{2,}$/);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Phone format is valid\", function () {\r",
+							"    const user = pm.response.json();\r",
+							"    pm.expect(user.phone).to.match(/^[\\d\\s\\-\\+\\(\\)\\.x]+$/);\r",
+							"});\r",
+							"\r",
+							"// Nested object validation\r",
+							"pm.test(\"Address structure validation\", function () {\r",
+							"    const user = pm.response.json();\r",
+							"    const address = user.address;\r",
+							"\r",
+							"    pm.expect(address).to.have.property('street');\r",
+							"    pm.expect(address).to.have.property('suite');\r",
+							"    pm.expect(address).to.have.property('city');\r",
+							"    pm.expect(address).to.have.property('zipcode');\r",
+							"    pm.expect(address).to.have.property('geo');\r",
+							"\r",
+							"    pm.expect(address.geo).to.have.property('lat');\r",
+							"    pm.expect(address.geo).to.have.property('lng');\r",
+							"\r",
+							"    // Validate geo coordinates format\r",
+							"    pm.expect(address.geo.lat).to.match(/^\\-?\\d+\\.\\d+$/);\r",
+							"    pm.expect(address.geo.lng).to.match(/^\\-?\\d+\\.\\d+$/);\r",
+							"});\r",
+							"\r",
+							"// Company structure validation\r",
+							"pm.test(\"Company structure validation\", function () {\r",
+							"    const user = pm.response.json();\r",
+							"    const company = user.company;\r",
+							"\r",
+							"    pm.expect(company).to.have.property('name');\r",
+							"    pm.expect(company).to.have.property('catchPhrase');\r",
+							"    pm.expect(company).to.have.property('bs');\r",
+							"\r",
+							"    // Validate company data types\r",
+							"    pm.expect(company.name).to.be.a('string');\r",
+							"    pm.expect(company.catchPhrase).to.be.a('string');\r",
+							"    pm.expect(company.bs).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"// Specific value validation for known user\r",
+							"pm.test(\"User ID 1 has expected values\", function () {\r",
+							"    const user = pm.response.json();\r",
+							"\r",
+							"    if (user.id === 1) {\r",
+							"        pm.expect(user.name).to.equal(\"Leanne Graham\");\r",
+							"        pm.expect(user.username).to.equal(\"Bret\");\r",
+							"        pm.expect(user.email).to.equal(\"Sincere@april.biz\");\r",
+							"        pm.expect(user.phone).to.equal(\"1-770-736-8031x56442\");\r",
+							"        pm.expect(user.website).to.equal(\"hildegard.org\");\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"// Validate value ranges and patterns\r",
+							"pm.test(\"User ID is positive number\", function () {\r",
+							"    const user = pm.response.json();\r",
+							"    pm.expect(user.id).to.be.above(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Username is valid format\", function () {\r",
+							"    const user = pm.response.json();\r",
+							"    pm.expect(user.username).to.match(/^[a-zA-Z0-9_]+$/);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Zipcode format is valid\", function () {\r",
+							"    const user = pm.response.json();\r",
+							"    pm.expect(user.address.zipcode).to.match(/^[a-zA-Z0-9\\-]+$/);\r",
+							"});\r",
+							"\r",
+							"// Extract data for future use\r",
+							"pm.test(\"Extract user data\", function () {\r",
+							"    const user = pm.response.json();\r",
+							"    pm.environment.set(\"user_id\", user.id);\r",
+							"    pm.environment.set(\"user_email\", user.email);\r",
+							"    pm.environment.set(\"user_name\", user.name);\r",
+							"\r",
+							"    console.log(`Extracted user: ${user.name} (${user.email})`);\r",
+							"    console.log(`User ID stored: ${pm.environment.get(\"user_id\")}`);\r",
+							"});\r",
+							"\r",
+							"// Performance logging\r",
+							"pm.test(\"Log performance metrics\", function () {\r",
+							"    console.log(`Response time: ${pm.response.responseTime}ms`);\r",
+							"    console.log(`Response size: ${pm.response.responseSize} bytes`);\r",
+							"    console.log(`Status: ${pm.response.code} ${pm.response.status}`);\r",
+							"});\r",
+							"\r",
+							"// Final summary\r",
+							"pm.test(\"All validations completed\", function () {\r",
+							"    console.log(\"✅ All user data validation tests executed\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
