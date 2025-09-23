@@ -32,7 +32,7 @@ jobs:
 
         run: |
 
-          newman run jsonplaceholder_collection.json \
+          newman run My_Collection.postman_collection.json \
 
             -e environment.json \
 
